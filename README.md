@@ -1,2 +1,16 @@
-# Quiz_GameV2.py
-An improved Python quiz game with multiple-choice questions, score tracking, and better code structure using functions and Python fundamentals.
+# Quiz Game V2
+
+A Python-based quiz application where users answer multiple-choice questions and receive their final score.
+
+## Features
+- Multiple-choice questions
+- Score calculation
+- User input handling
+- Improved code structure using functions
+
+## Concepts Practiced
+- Functions
+- Lists
+- Loops
+- Conditional statements
+- User input
