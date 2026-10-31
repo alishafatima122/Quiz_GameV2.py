@@ -39,27 +39,19 @@ while True:
 
   choice = input("Enter your choice (1 or 2): ")
   if choice == "1":
-    score = 0
-    questions = questions.copy()  
-    random.shuffle(questions)
+        score = 0
+        for i in range(len(questions)):
+            print(f"Question {i + 1}: {questions[i]}")
+            user_answer = input("Your answer: ").strip().lower()
+            if user_answer == "exit":
+                print("Exiting the game. Goodbye!")
+                break
 
-    for q in questions:
-        print("\n" + q["question"])
-        for i, option in enumerate(q["options"], start=1):
-            print(f"{i}. {option}")
-        try:
-            answer = input("Enter the number of your answer: ")
-            if q["options"][int(answer) - 1] == q["answer"]:
-              print("Correct!")
-              score += 1
+            elif user_answer == answers[i]:
+                print("Correct!\n")
+                score += 1
+
             else:
-              print(f"Wrong! The correct answer is: {q['answer']}")
-        except (ValueError, IndexError):
-            print("Invalid input. Please enter a number corresponding to the options.")
-            
-    print(f"\nYour final score is: {score}/{len(questions)}")
-  elif choice == "2":
-    print("Thank you for playing! Goodbye!")
-    break
-  else:
-    print("Invalid choice. Please enter 1 or 2.")
+                print(f"Incorrect! The correct answer is: {answers[i]}\n")
+                
+        print(f"Your final score is: {score}/{len(questions)}\n")
